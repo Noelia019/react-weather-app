@@ -4,6 +4,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
+      <h1>React app</h1>
     </div>
   );
 }
