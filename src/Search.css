@@ -1,0 +1,51 @@
+.Search {
+  border: 1px #dadde1 solid;
+  margin: 10px 0;
+  border-radius: 4px;
+  padding: 16px;
+  color: #878787;
+  font-family: arial, sans-serif;
+}
+
+.Search h1 {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 20px 0 0;
+  line-height: 29px;
+}
+
+.Search ul {
+  padding: 0;
+}
+
+.Search li {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+  list-style: none;
+}
+
+.Search img {
+  max-width: 25%;
+  display: inline-block;
+  height: 64px;
+  position: relative;
+  top: -15px;
+}
+
+.Search .temperature {
+  color: #212121;
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.Search .unit {
+  color: #212121;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -34px;
+}
