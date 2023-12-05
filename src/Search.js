@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Search.css";
 
@@ -11,9 +12,10 @@ export default function Search(props) {
       ready: true,
       temperature: response.data.main.temp,
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      description: response.data.weather[0].description,
     });
   }
 
@@ -39,7 +41,9 @@ export default function Search(props) {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>Sunday 07:00 </li>
+          <li>
+            <FormattedDate date={weatherData.date} />{" "}
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
@@ -72,7 +76,6 @@ export default function Search(props) {
     );
   } else {
     let apiKey = `15b6ba0523386a8a73b38b2440a74dea`;
-    let city = "london";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleTemperature);
 
