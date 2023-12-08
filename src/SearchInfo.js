@@ -16,7 +16,7 @@ export default function SearchInfo(props) {
       <div className="row mt-3">
         <div className="col-6">
           <div className="clearfix">
-            <WeatherIcon code="props.data.icon" className="float-left" />
+            <WeatherIcon code={props.data.icon} className="float-left" />
 
             <span className="float-left">
               <WeatherTemperature celsius={props.data.temperature} />
