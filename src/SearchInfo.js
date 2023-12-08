@@ -1,5 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
+
 export default function SearchInfo(props) {
   return (
     <div className="SearchInfo">
@@ -13,11 +15,7 @@ export default function SearchInfo(props) {
       <div className="row mt-3">
         <div className="col-6">
           <div className="clearfix">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/rain.png"
-              alt="Rain"
-              className="float-left"
-            ></img>
+            <WeatherIcon code="props.data.icon" className="float-left" />
 
             <span className="float-left">
               <span className="temperature">

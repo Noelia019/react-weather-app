@@ -8,13 +8,14 @@ export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleTemperature(response) {
-    console.log(response.data);
+    console.log(response.data.weather[0].icon);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
     });
