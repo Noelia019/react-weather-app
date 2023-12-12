@@ -17,9 +17,13 @@ export default function SearchWeatherForecast(props) {
     return (
       <div className="SearchWeatherForecast">
         <div className="row">
-          <div className="col-2">
-            <WeatherForecastDay data={forecast[0]} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            return (
+              <div className="col" key={index}>
+                <WeatherForecastDay data={dailyForecast} />
+              </div>
+            );
+          })}
         </div>
       </div>
     );
