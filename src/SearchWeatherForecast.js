@@ -9,7 +9,7 @@ export default function SearchWeatherForecast(props) {
   const [forecast, setForecast] = useState(null);
 
   useEffect(() => {
-    setForecast(false);
+    setLoaded(false);
   }, [props.coordinates]);
 
   function handleResponse(response) {
@@ -23,11 +23,15 @@ export default function SearchWeatherForecast(props) {
       <div className="SearchWeatherForecast">
         <div className="row">
           {forecast.map(function (dailyForecast, index) {
-            return (
-              <div className="col" key={index}>
-                <WeatherForecastDay data={dailyForecast} />
-              </div>
-            );
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
           })}
         </div>
       </div>
